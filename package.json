@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "NP Survival Toolkit - Netlify Functions",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "build": "echo 'No build step required'",
     "dev": "netlify dev"

@@ -218,8 +218,8 @@
         
         <div class="social-links">
             <p>Follow us for more NP school tips:</p>
-            <a href="https://tiktok.com/@npsurvivalkit" target="_blank" onclick="trackSocialClick('tiktok')">TikTok</a>
-            <a href="https://instagram.com/npsurvivalkit" target="_blank" onclick="trackSocialClick('instagram')">Instagram</a>
+            <a href="https://tiktok.com/@npsurvivalkit" target="_blank">TikTok</a>
+            <a href="https://instagram.com/npsurvivalkit" target="_blank">Instagram</a>
         </div>
         
         <div class="stats">
@@ -242,8 +242,8 @@
             localStorage.setItem('npToolkitDownloads', downloadCount);
             document.getElementById('downloadCount').textContent = downloadCount;
             
-            // Send tracking data to server
-            fetch('/api/track-download', {
+            // Send tracking data to server (simplified version)
+            fetch('/api/track-download-simple', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -267,8 +267,8 @@
                 return;
             }
             
-            // Send email to server
-            fetch('/api/capture-email', {
+            // Send email to server (simplified version)
+            fetch('/api/capture-email-simple', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -292,35 +292,6 @@
                 emailMessage.innerHTML = '<div style="color: red;">Something went wrong. Please try again.</div>';
                 emailMessage.classList.remove('hidden');
             });
-        }
-        
-        // Track social clicks
-        function trackSocialClick(platform) {
-            fetch('/api/track-social', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    platform: platform,
-                    timestamp: new Date().toISOString()
-                })
-            }).catch(err => console.log('Social tracking error:', err));
-        }
-        
-        // Track affiliate link clicks
-        function trackAffiliateClick(product, link) {
-            fetch('/api/track-affiliate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    product: product,
-                    link: link,
-                    timestamp: new Date().toISOString()
-                })
-            }).catch(err => console.log('Affiliate tracking error:', err));
         }
         
         // Allow Enter key for email capture
