@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NP Survival Toolkit - Free Download</title>
+    <title>NP Survival Toolkit - Home</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,44 +55,20 @@
             margin: 20px 0;
             border-left: 4px solid #2EC4B6;
         }
-        .email-capture {
-            background: #e8f5e8;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+        .cta-section {
             text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #e8f5e8;
+            border-radius: 15px;
         }
-        .email-form {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .email-input {
-            padding: 12px;
-            border: 2px solid #2EC4B6;
-            border-radius: 8px;
-            font-size: 16px;
-            min-width: 250px;
-        }
-        .email-btn {
-            background: #2EC4B6;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .download-btn {
+        .cta-button {
             background: linear-gradient(45deg, #2EC4B6, #6C5CE7);
             color: white;
-            padding: 15px 30px;
+            padding: 20px 40px;
             border: none;
             border-radius: 25px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
@@ -100,7 +76,7 @@
             margin: 20px 0;
             transition: transform 0.3s ease;
         }
-        .download-btn:hover {
+        .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -139,22 +115,18 @@
             font-size: 14px;
             color: #856404;
         }
-        .stats {
-            background: #e8f5e8;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+        .nav {
             text-align: center;
+            margin: 20px 0;
         }
-        .hidden {
-            display: none;
+        .nav a {
+            color: #2EC4B6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
+        .nav a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -178,19 +150,17 @@
                 <li>📱 Digital resources and apps</li>
             </ul>
         </div>
-        
-        <div class="email-capture" id="emailCapture">
-            <h3>📧 Get Updates & Exclusive NP Resources</h3>
-            <p>Join our email list for additional study tips, new resources, and exclusive NP student discounts!</p>
-            <div class="email-form">
-                <input type="email" class="email-input" id="emailInput" placeholder="Enter your email address" required>
-                <button class="email-btn" onclick="captureEmail()">Join List</button>
-            </div>
-            <div id="emailMessage" class="hidden"></div>
+
+        <div class="nav">
+            <a href="resources.html">📚 View All Resources</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </div>
         
-        <div style="text-align: center;">
-            <a href="NP_Survival_Toolkit_Clean.md" class="download-btn" onclick="trackDownload()" download>📥 Download Free Toolkit</a>
+        <div class="cta-section">
+            <h2>🚀 Ready to Succeed in NP School?</h2>
+            <p>Get access to all the textbooks, study tools, and supplies you need to thrive in NP school.</p>
+            <a href="resources.html" class="cta-button">View All Resources →</a>
         </div>
         
         <div class="features">
@@ -222,84 +192,9 @@
             <a href="https://instagram.com/npsurvivalkit" target="_blank">Instagram</a>
         </div>
         
-        <div class="stats">
-            <strong>📊 Downloads:</strong> <span id="downloadCount">Loading...</span>
-        </div>
-        
         <div class="disclaimer">
             <strong>Affiliate Disclosure:</strong> This toolkit contains affiliate links. When you purchase through these links, we may earn a small commission at no extra cost to you. This helps us continue providing valuable resources to NP students.
         </div>
     </div>
-
-    <script>
-        // Simple download counter using localStorage
-        let downloadCount = localStorage.getItem('npToolkitDownloads') || 0;
-        document.getElementById('downloadCount').textContent = downloadCount;
-        
-        // Track downloads
-        function trackDownload() {
-            downloadCount++;
-            localStorage.setItem('npToolkitDownloads', downloadCount);
-            document.getElementById('downloadCount').textContent = downloadCount;
-            
-            // Send tracking data to server (simplified version)
-            fetch('/api/track-download-simple', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    action: 'download',
-                    timestamp: new Date().toISOString(),
-                    userAgent: navigator.userAgent
-                })
-            }).catch(err => console.log('Tracking error:', err));
-        }
-        
-        // Capture email
-        function captureEmail() {
-            const email = document.getElementById('emailInput').value;
-            const emailMessage = document.getElementById('emailMessage');
-            
-            if (!email || !email.includes('@')) {
-                emailMessage.innerHTML = '<div style="color: red;">Please enter a valid email address</div>';
-                emailMessage.classList.remove('hidden');
-                return;
-            }
-            
-            // Send email to server (simplified version)
-            fetch('/api/capture-email-simple', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                    timestamp: new Date().toISOString(),
-                    source: 'toolkit_download'
-                })
-            }).then(response => {
-                if (response.ok) {
-                    emailMessage.innerHTML = '<div class="success-message">✅ Thanks! You\'re now on our NP student list. Check your email for exclusive resources!</div>';
-                    emailMessage.classList.remove('hidden');
-                    document.getElementById('emailInput').value = '';
-                } else {
-                    emailMessage.innerHTML = '<div style="color: red;">Something went wrong. Please try again.</div>';
-                    emailMessage.classList.remove('hidden');
-                }
-            }).catch(err => {
-                console.log('Email capture error:', err);
-                emailMessage.innerHTML = '<div style="color: red;">Something went wrong. Please try again.</div>';
-                emailMessage.classList.remove('hidden');
-            });
-        }
-        
-        // Allow Enter key for email capture
-        document.getElementById('emailInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                captureEmail();
-            }
-        });
-    </script>
 </body>
 </html>
