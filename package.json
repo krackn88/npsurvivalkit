@@ -1,0 +1,24 @@
+{
+  "name": "npsurvivalkit-netlify",
+  "version": "1.0.0",
+  "description": "NP Survival Toolkit - Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/neon": "^1.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": [
+    "nurse-practitioner",
+    "affiliate-marketing",
+    "netlify",
+    "neon"
+  ],
+  "author": "Dustin Gulley",
+  "license": "MIT"
+}
