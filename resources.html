@@ -4,168 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NP Survival Toolkit - Resources</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            margin-top: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #2EC4B6;
-        }
-        .logo {
-            width: 80px;
-            height: 80px;
-            background: #2EC4B6;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-        }
-        h1 {
-            color: #0F1A2B;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .description {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #2EC4B6;
-            font-size: 16px;
-        }
-        .section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            border: 2px solid #e9ecef;
-        }
-        .section-title {
-            color: #2EC4B6;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .resource-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #dee2e6;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .resource-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #0F1A2B;
-            margin-bottom: 10px;
-        }
-        .resource-description {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        .resource-link {
-            display: inline-block;
-            background: #2EC4B6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .resource-link:hover {
-            background: #26a69a;
-        }
-        .price {
-            color: #28a745;
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .commission {
-            color: #6c757d;
-            font-size: 12px;
-            font-style: italic;
-        }
-        .nav {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .nav a {
-            color: #2EC4B6;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .nav a:hover {
-            text-decoration: underline;
-        }
-        .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #856404;
-        }
-        .social-links {
-            text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: #e8f5e8;
-            border-radius: 10px;
-        }
-        .social-links a {
-            color: #2EC4B6;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -181,11 +20,15 @@
         </div>
 
         <div class="nav">
-            <a href="index.html">🏠 Home</a>
             <a href="#textbooks">📚 Textbooks</a>
             <a href="#study-tools">🧠 Study Tools</a>
             <a href="#supplies">👩‍⚕️ Clinical Supplies</a>
             <a href="#productivity">✍️ Productivity</a>
+        </div>
+
+        <div class="search-bar">
+            <input id="resourceSearch" class="search-input" type="text" placeholder="Search resources (e.g., pharmacology, stethoscope, planner)..." />
+            <span class="pill">NP Toolkit</span>
         </div>
 
         <div class="section" id="textbooks">
@@ -196,7 +39,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Buttaro: Primary Care</div>
                     <div class="resource-description">The gold standard for NP clinical practice. Comprehensive clinical decision-making guide that every NP student needs.</div>
-                    <a href="https://www.amazon.com/Buttaro-Primary-Care-Clinical-Practice/dp/0323711052/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/0323711052/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/0323711052/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$80-120</div>
                     <div class="commission">Essential for clinical rotations</div>
                 </div>
@@ -204,7 +50,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Pharmacology for Primary Care Provider</div>
                     <div class="resource-description">Master drug therapy with this comprehensive pharmacology guide. Perfect for clinical rotations and board prep.</div>
-                    <a href="https://www.amazon.com/Pharmacology-Primary-Care-Provider-Clinical/dp/0323642476/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/0323642476/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/0323642476/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$60-90</div>
                     <div class="commission">Must-have for pharmacology</div>
                 </div>
@@ -212,7 +61,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Pathophysiology: Biologic Basis for Disease</div>
                     <div class="resource-description">Understand disease processes with this comprehensive pathophysiology textbook. Essential for advanced practice understanding.</div>
-                    <a href="https://www.amazon.com/Pathophysiology-Biologic-Basis-Disease-Adults/dp/0323654393/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/0323654393/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/0323654393/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$70-100</div>
                     <div class="commission">Core textbook for NP school</div>
                 </div>
@@ -220,7 +72,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Davis's Drug Guide for Nurses</div>
                     <div class="resource-description">Quick drug reference that's perfect for clinical rotations and practice. Updated with latest medications.</div>
-                    <a href="https://www.amazon.com/Daviss-Drug-Guide-Nurses-2024/dp/1719642859/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/1719642859/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/1719642859/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$40-60</div>
                     <div class="commission">Handy clinical reference</div>
                 </div>
@@ -228,7 +83,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Taber's Cyclopedic Medical Dictionary</div>
                     <div class="resource-description">Medical terminology reference that helps you understand complex medical terms throughout NP school.</div>
-                    <a href="https://www.amazon.com/Tabers-Cyclopedic-Medical-Dictionary-24th/dp/1719642859/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/1719642859/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/1719642859/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$30-50</div>
                     <div class="commission">Essential reference tool</div>
                 </div>
@@ -274,7 +132,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Littmann Classic III Stethoscope</div>
                     <div class="resource-description">Professional grade stethoscope with clear sound and durable construction. This is an investment that will last years.</div>
-                    <a href="https://www.amazon.com/3M-Littmann-Classic-III-Stethoscope/dp/B0015PXMFC/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/B0015PXMFC/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/B0015PXMFC/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$80-120</div>
                     <div class="commission">Professional quality</div>
                 </div>
@@ -282,7 +143,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Professional Scrubs Set</div>
                     <div class="resource-description">Comfortable and functional scrubs. Look for brands like Cherokee, Grey's Anatomy, or Dickies with pockets and stretch fabric.</div>
-                    <a href="https://www.amazon.com/Cherokee-Uniforms-Workwear-Professional-Scrubs/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$30-50</div>
                     <div class="commission">Comfortable for long shifts</div>
                 </div>
@@ -290,7 +154,10 @@
                 <div class="resource-card">
                     <div class="resource-title">NP Clinical Bag</div>
                     <div class="resource-description">Organize your clinical essentials with multiple compartments and durable material. Must-have for clinical rotations.</div>
-                    <a href="https://www.amazon.com/Medical-Professional-Clinical-Student-Backpack/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$25-40</div>
                     <div class="commission">Keeps you organized</div>
                 </div>
@@ -298,7 +165,10 @@
                 <div class="resource-card">
                     <div class="resource-title">NP Student Planner</div>
                     <div class="resource-description">Track clinicals and exams with features like clinical rotation schedule, exam dates, and assignment tracker.</div>
-                    <a href="https://www.amazon.com/Nursing-Student-Planner-Clinical-Rotations/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$15-25</div>
                     <div class="commission">Stay organized and on track</div>
                 </div>
@@ -306,7 +176,10 @@
                 <div class="resource-card">
                     <div class="resource-title">Medical Reference Cards</div>
                     <div class="resource-description">Quick clinical reference cards perfect for clinical rotations and quick lookups during patient care.</div>
-                    <a href="https://www.amazon.com/Medical-Reference-Cards-Nursing-Students/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                    <div class="resource-actions">
+                        <a href="https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20" class="resource-link" target="_blank">Buy on Amazon</a>
+                        <button class="copy-btn" onclick="copyToClipboard('https://www.amazon.com/dp/B08N5KQZ9M/?tag=nursehusband8-20')">Copy link</button>
+                    </div>
                     <div class="price">$10-20</div>
                     <div class="commission">Quick reference during clinicals</div>
                 </div>
@@ -354,5 +227,6 @@
             <strong>Affiliate Disclosure:</strong> This page contains affiliate links. When you purchase through these links, we may earn a small commission at no extra cost to you. This helps us continue providing valuable resources to NP students. Thank you for your support!
         </div>
     </div>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
