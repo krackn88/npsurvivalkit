@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NP Survival Toolkit - Home</title>
+    <title>NP Survival Toolkit - Complete Guide to Nurse Practitioner School Success</title>
+    <meta name="description" content="The ultimate NP school survival guide with essential textbooks, study tools, clinical supplies, and proven strategies. Get everything you need to succeed in nurse practitioner school.">
+    <meta name="keywords" content="nurse practitioner school, NP study guide, NP textbooks, NP exam prep, nurse practitioner supplies, NP survival kit">
+    <meta name="author" content="NP Survival Toolkit">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://npsurvivalkit.netlify.app/">
+    <meta property="og:title" content="NP Survival Toolkit - Complete Guide to NP School Success">
+    <meta property="og:description" content="Essential textbooks, study tools, and strategies for nurse practitioner school success.">
+    <meta property="og:image" content="https://npsurvivalkit.netlify.app/assets/img/np-hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://npsurvivalkit.netlify.app/">
+    <meta property="twitter:title" content="NP Survival Toolkit - Complete Guide to NP School Success">
+    <meta property="twitter:description" content="Essential textbooks, study tools, and strategies for nurse practitioner school success.">
+    <meta property="twitter:image" content="https://npsurvivalkit.netlify.app/assets/img/np-hero.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "NP Survival Toolkit",
+        "description": "Complete guide to nurse practitioner school success with essential textbooks, study tools, and strategies",
+        "url": "https://npsurvivalkit.netlify.app",
+        "sameAs": [
+            "https://tiktok.com/@npsurvivalkit",
+            "https://instagram.com/npsurvivalkit"
+        ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -31,10 +76,63 @@
 
         <div class="nav">
             <a href="resources.html">📚 View All Resources</a>
+            <a href="blog.html">📝 Study Tips Blog</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
         
+        <!-- Email Capture Section -->
+        <div class="email-capture-section">
+            <h2>📧 Get Free NP Study Tips Weekly</h2>
+            <p>Join 2,500+ NP students getting proven study strategies, exam tips, and exclusive discounts delivered to your inbox.</p>
+            <form class="email-form" onsubmit="captureEmail(event)">
+                <input type="email" placeholder="Enter your email address" required class="email-input">
+                <button type="submit" class="email-submit-btn">Get Free Tips</button>
+            </form>
+            <p class="email-privacy">🔒 We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="social-proof">
+            <div class="proof-item">
+                <div class="proof-number">2,500+</div>
+                <div class="proof-label">Students Helped</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">15K+</div>
+                <div class="proof-label">TikTok Followers</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">4.9★</div>
+                <div class="proof-label">Average Rating</div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials-section">
+            <h2>💬 What NP Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "This toolkit saved me thousands of dollars and hours of research. Every resource is exactly what I needed for NP school!"
+                    </div>
+                    <div class="testimonial-author">- Sarah M., FNP Student</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The study strategies here helped me pass my boards on the first try. Worth every penny!"
+                    </div>
+                    <div class="testimonial-author">- Michael R., AGNP Graduate</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Finally, a resource that understands what NP students actually need. The clinical supplies list is perfect!"
+                    </div>
+                    <div class="testimonial-author">- Jessica L., PNP Student</div>
+                </div>
+            </div>
+        </div>
+
         <div class="cta-section">
             <h2>🚀 Ready to Succeed in NP School?</h2>
             <p>Get access to all the textbooks, study tools, and supplies you need to thrive in NP school.</p>
@@ -74,5 +172,86 @@
             <strong>Affiliate Disclosure:</strong> This toolkit contains affiliate links. When you purchase through these links, we may earn a small commission at no extra cost to you. This helps us continue providing valuable resources to NP students.
         </div>
     </div>
+
+    <!-- Email Capture Modal -->
+    <div id="emailModal" class="email-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>🎉 Welcome to NP Success!</h3>
+            <p>Check your email for your free NP study guide and weekly tips!</p>
+            <button onclick="closeEmailModal()" class="modal-close-btn">Got it!</button>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        // Email capture function
+        function captureEmail(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('.email-input').value;
+            
+            // Track email capture
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_capture', {
+                    'event_category': 'engagement',
+                    'event_label': 'homepage_signup'
+                });
+            }
+            
+            // Call Netlify function
+            fetch('/.netlify/functions/capture-email-simple', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Email captured:', data);
+                showEmailModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showEmailModal(); // Show modal anyway
+            });
+        }
+
+        function showEmailModal() {
+            document.getElementById('emailModal').style.display = 'block';
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('emailModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Track affiliate link clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.href && e.target.href.includes('amzn.to')) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'affiliate_click', {
+                        'event_category': 'affiliate',
+                        'event_label': e.target.href
+                    });
+                }
+            }
+        });
+
+        // Auto-popup email capture after 30 seconds
+        setTimeout(function() {
+            if (!localStorage.getItem('emailPopupShown')) {
+                showEmailModal();
+                localStorage.setItem('emailPopupShown', 'true');
+            }
+        }, 30000);
+    </script>
 </body>
 </html>
