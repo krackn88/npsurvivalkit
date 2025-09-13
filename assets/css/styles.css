@@ -22,19 +22,6 @@ body {
 	margin-bottom: 20px;
 }
 
-.hero {
-	margin: 20px auto 10px auto;
-	text-align: center;
-}
-
-.hero img {
-	max-width: 360px;
-	width: 100%;
-	height: auto;
-	display: inline-block;
-	filter: drop-shadow(0 8px 24px rgba(16,24,40,0.12));
-	border-radius: 12px;
-}
 
 .logo {
 	width: 80px;
