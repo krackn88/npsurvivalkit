@@ -798,3 +798,71 @@ h1 {
 	}
 }
 
+/* About and Contact Sections */
+.about-section, .contact-section {
+	background: #f8f9fa;
+	padding: 30px;
+	border-radius: 15px;
+	margin: 30px 0;
+	border-left: 4px solid #2EC4B6;
+}
+
+.about-section h2, .contact-section h2 {
+	color: #0F1A2B;
+	margin-bottom: 20px;
+	font-size: 1.8em;
+}
+
+.about-section p, .contact-section p {
+	color: #555;
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+.contact-section a {
+	color: #2EC4B6;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.contact-section a:hover {
+	text-decoration: underline;
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+	background: white;
+	padding: 30px;
+	border-radius: 15px;
+	margin: 30px 0;
+	border: 1px solid #e9ecef;
+	text-align: center;
+}
+
+.coming-soon-section h3 {
+	color: #0F1A2B;
+	margin-bottom: 20px;
+	font-size: 1.5em;
+}
+
+.coming-soon-section ul {
+	text-align: left;
+	max-width: 400px;
+	margin: 20px auto;
+}
+
+.coming-soon-section li {
+	margin-bottom: 8px;
+	color: #555;
+}
+
+.coming-soon-section a {
+	color: #2EC4B6;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.coming-soon-section a:hover {
+	text-decoration: underline;
+}
+
